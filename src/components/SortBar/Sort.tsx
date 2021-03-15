@@ -1,44 +1,46 @@
-import React, { useState } from "react";
-import ItemsCarousel from "react-items-carousel";
-import { SortItem } from "./SortItem";
+import { Box, Text } from "@chakra-ui/layout";
+import React from "react";
 
 interface SortProps {}
 
 export const Sort: React.FC<SortProps> = ({}) => {
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const changeActiveItem = (activeItemIndex: number) =>
-    setActiveItemIndex(activeItemIndex);
+  // const [activeItemIndex, setActiveItemIndex] = useState(0);
+  // const changeActiveItem = (activeItemIndex: number) =>
+  //   setActiveItemIndex(activeItemIndex);
   return (
-    <ItemsCarousel
-      // Carousel configurations
-      numberOfCards={13}
-      gutter={30}
-      showSlither={true}
-      firstAndLastGutter={true}
-      freeScrolling={false}
-      // Active item configurations
-      requestToChangeActive={changeActiveItem}
-      activeItemIndex={activeItemIndex}
-      activePosition={"center"}
-      chevronWidth={24}
-      rightChevron={">"}
-      leftChevron={"<"}
-      outsideChevron={false}
-    >
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-      <SortItem title="All" />
-    </ItemsCarousel>
+    <Box>
+      <Text>Tere</Text>
+    </Box>
+    // <ItemsCarousel
+    //   // Carousel configurations
+    //   numberOfCards={13}
+    //   gutter={30}
+    //   showSlither={true}
+    //   firstAndLastGutter={true}
+    //   freeScrolling={false}
+    //   // Active item configurations
+    //   requestToChangeActive={changeActiveItem}
+    //   activeItemIndex={activeItemIndex}
+    //   activePosition={"center"}
+    //   chevronWidth={24}
+    //   rightChevron={">"}
+    //   leftChevron={"<"}
+    //   outsideChevron={false}
+    // >
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    //   <SortItem title="All" />
+    // </ItemsCarousel>
     // <HStack
     //   className="carousel"
     //   spacing={4}
