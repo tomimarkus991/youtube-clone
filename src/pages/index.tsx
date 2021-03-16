@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Flex } from "@chakra-ui/layout";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
@@ -8,10 +9,12 @@ interface IndexProps {}
 
 const Index: React.FC<IndexProps> = ({}) => {
   const [isMinimized, setIsMinimized] = useState(false);
+  const bg = useColorModeValue("#F9F9F9", "#181818");
+
   return (
     <>
       <Navbar isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
-      <Flex flexDirection="row" position="sticky">
+      <Flex flexDirection="row" position="sticky" bg={bg}>
         <SideMenu isMinimized={isMinimized} />
         {/* <Flex flexDirection="column"> */}
         {/* <Divider orientation="horizontal" /> */}

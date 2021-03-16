@@ -21,7 +21,6 @@ export const SideMenuItemButtonSmall: React.FC<SideMenuItemButtonSmallProps> = (
       size="lg"
       h="5em"
       borderRadius={0}
-      colorScheme="blue"
       variant="ghost"
       isActive={active}
       display="flex"

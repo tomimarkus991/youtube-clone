@@ -1,5 +1,6 @@
 import { Grid } from "@chakra-ui/layout";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getVideos } from "../../utils/getData";
 import { Video } from "./Video";
 
 interface VideosProps {}
@@ -7,6 +8,14 @@ interface VideosProps {}
 export const Videos: React.FC<VideosProps> = ({}) => {
   // react scroll pagination
   // what stuff bar
+  const [data, setData] = useState([]);
+  const up = async () => {
+    let data = await getVideos();
+    setData(data.items);
+  };
+  useEffect(() => {
+    up();
+  }, []);
   return (
     <Grid
       boxSizing="border-box"
@@ -28,43 +37,9 @@ export const Videos: React.FC<VideosProps> = ({}) => {
       w="100%"
       justifyItems="center"
     >
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
-      <Video />
+      {data.map((video: any) => {
+        return <Video video={video} id={video.id} />;
+      })}
     </Grid>
   );
 };

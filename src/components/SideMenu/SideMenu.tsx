@@ -7,19 +7,19 @@ interface SideMenuProps {
 }
 
 export const SideMenu: React.FC<SideMenuProps> = ({ isMinimized }) => {
-  const bg = useColorModeValue("white", "gray.700");
+  const bg = useColorModeValue("white", "#202020");
 
   return (
     <>
       <Box
         display={{ base: "none", xl: "block" }}
         className="sidebar"
-        bg={bg}
         w={isMinimized ? "xxs" : "xxs2"}
         minW={isMinimized ? "xxs" : "xxs2"}
         maxH="94vh"
         top="3.5em"
         zIndex={1}
+        bg={bg}
       >
         {isMinimized ? <SideMenuContentSmall /> : <SideMenuContent />}
       </Box>

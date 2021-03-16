@@ -11,7 +11,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ isMinimized, setIsMinimized }) => {
-  const bg = useColorModeValue("white", "gray.700");
+  const bg = useColorModeValue("white", "#202020");
   return (
     <Flex
       position="sticky"

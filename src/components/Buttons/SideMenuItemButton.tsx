@@ -17,7 +17,6 @@ export const SideMenuItemButton: React.FC<SideMenuItemButtonProps> = ({
   return (
     <Button
       borderRadius={0}
-      colorScheme="blue"
       variant="ghost"
       justifyContent="flex-start"
       leftIcon={icon}

@@ -15,6 +15,10 @@ const customTheme = extendTheme({
       100: "#c90eb7",
       900: "#0c26ed",
     },
+    gray: {
+      700: "#181818",
+      800: "#202020",
+    },
   },
   components: {
     Flex: {},
@@ -27,7 +31,7 @@ const customTheme = extendTheme({
     sm: "30em",
     md: "48em",
     lg: "62em",
-    xl: "83em",
+    xl: "83.5em",
     xsl: "93em",
     "2xl": "96em",
     xxl: "95em",
