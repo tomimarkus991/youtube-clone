@@ -16,13 +16,16 @@ export const Video: React.FC<VideoProps> = ({ video, id }) => {
   let { contentDetails, snippet, statistics } = video;
   let { channelTitle, publishedAt, title, thumbnails } = snippet;
   const [user, setUser] = useState<any>();
+
   const up = async () => {
     let user = await getUserProfile(snippet.channelId);
     setUser(user);
   };
+
   useEffect(() => {
     up();
   }, []);
+
   const seconds = moment.duration(contentDetails.duration).asSeconds();
   let duration = moment.utc(seconds * 1000).format("m:ss");
 
@@ -48,7 +51,7 @@ export const Video: React.FC<VideoProps> = ({ video, id }) => {
         </Badge>
       </Box>
       <Flex mt="0.5em" boxSizing="border-box" marginX="1em">
-        {user.items[0].snippet.thumbnails.default.url ? (
+        {user ? (
           <Avatar src={user.items[0].snippet.thumbnails.default.url} />
         ) : (
           <Avatar src="https://bit.ly/broken-link" />

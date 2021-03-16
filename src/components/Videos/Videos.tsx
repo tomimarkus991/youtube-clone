@@ -37,9 +37,9 @@ export const Videos: React.FC<VideosProps> = ({}) => {
       w="100%"
       justifyItems="center"
     >
-      {data.map((video: any) => {
-        return <Video video={video} id={video.id} />;
-      })}
+      {data.map((video: any) => (
+        <Video video={video} id={video.id} />
+      ))}
     </Grid>
   );
 };
