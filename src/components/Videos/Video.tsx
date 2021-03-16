@@ -1,3 +1,4 @@
+import { Avatar } from "@chakra-ui/avatar";
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Image as ChakraImage } from "@chakra-ui/image";
 import { Badge, Box, Flex, HStack, Text } from "@chakra-ui/layout";
