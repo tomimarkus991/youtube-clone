@@ -5,6 +5,7 @@ import { Badge, Box, Flex, HStack, Text } from "@chakra-ui/layout";
 import moment from "moment";
 import numeral from "numeral";
 import React, { useEffect, useState } from "react";
+import { BsDot } from "react-icons/bs";
 import { GoVerified } from "react-icons/go";
 import { getUserProfile } from "../../utils/getData";
 interface VideoProps {
@@ -69,7 +70,8 @@ export const Video: React.FC<VideoProps> = ({ video, id }) => {
             <Text fontSize="sm">
               {numeral(statistics.viewCount).format("Oa").toUpperCase()}
             </Text>
-            •<Text fontSize="sm">{moment(publishedAt).fromNow()}</Text>
+            <BsDot />
+            <Text fontSize="sm">{moment(publishedAt).fromNow()}</Text>
           </HStack>
         </Box>
       </Flex>
