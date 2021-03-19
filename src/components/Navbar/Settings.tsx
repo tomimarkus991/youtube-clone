@@ -38,8 +38,8 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
       </Tooltip>
       <MenuList>
         <MenuItem>
-          <IconButton
-            icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
+          <Button
+            leftIcon={colorMode === "light" ? <FaMoon /> : <FaSun />}
             onClick={toggleColorMode}
             aria-label="Switch color-mode"
             variant="ghost"
