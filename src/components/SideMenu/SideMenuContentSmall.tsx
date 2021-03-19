@@ -11,24 +11,24 @@ export const SideMenuContentSmall: React.FC<SideMenuContentSmallProps> = ({}) =>
   return (
     <Flex direction="column" alignSelf="flex-start">
       <SideMenuItemButtonSmall
-        icon={<FaHome size={25} />}
+        icon={<FaHome size={24} />}
         active={true}
         title="Home"
       />
       <SideMenuItemButtonSmall
-        icon={<IoMdFlame size={25} />}
+        icon={<IoMdFlame size={24} />}
         title="Trending"
       />
       <SideMenuItemButtonSmall
-        icon={<MdSubscriptions size={25} />}
+        icon={<MdSubscriptions size={24} />}
         title="Subscriptions"
       />
 
       <SideMenuItemButtonSmall
-        icon={<MdVideoLibrary size={25} />}
+        icon={<MdVideoLibrary size={24} />}
         title="Library"
       />
-      <SideMenuItemButtonSmall icon={<MdHistory size={25} />} title="History" />
+      <SideMenuItemButtonSmall icon={<MdHistory size={24} />} title="History" />
     </Flex>
   );
 };

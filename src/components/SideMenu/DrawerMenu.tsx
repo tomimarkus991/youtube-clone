@@ -31,25 +31,24 @@ export const DrawerMenu: React.FC<DrawerMenuProps> = ({}) => {
         onClick={onOpen}
         display={{ base: "inline-flex", xl: "none" }}
       />
-      <Drawer isOpen={isOpen} onClose={onClose} placement="left">
-        <DrawerOverlay>
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>
-              <Button variant="ghost">
-                <Box marginRight={{ sm: "5px" }}>
-                  <ImYoutube size={35} color="red" />
-                </Box>
-                <Box>
-                  <ImYoutube2 size={50} color={iconColor} />
-                </Box>
-              </Button>
-            </DrawerHeader>
-            <DrawerBody>
-              <SideMenuContent />
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
+      <Drawer isOpen={isOpen} onClose={onClose} placement="left" size="xs">
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>
+            <Button variant="ghost">
+              <Box marginRight={{ sm: "5px" }}>
+                <ImYoutube size={35} color="red" />
+              </Box>
+              <Box>
+                <ImYoutube2 size={50} color={iconColor} />
+              </Box>
+            </Button>
+          </DrawerHeader>
+          <DrawerBody className="scrollbar" paddingX={0}>
+            <SideMenuContent />
+          </DrawerBody>
+        </DrawerContent>
       </Drawer>
     </>
   );

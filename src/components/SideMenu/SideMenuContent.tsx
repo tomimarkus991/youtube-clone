@@ -1,6 +1,6 @@
 import { Text } from "@chakra-ui/layout";
 import { Box, Flex } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { AiFillYoutube } from "react-icons/ai";
 import { BiHelpCircle, BiNews } from "react-icons/bi";
 import { BsCameraVideoFill } from "react-icons/bs";
@@ -24,25 +24,26 @@ import { SideMenuItemHeading } from "./SideMenuItemHeading";
 interface SideMenuContentProps {}
 
 export const SideMenuContent: React.FC<SideMenuContentProps> = ({}) => {
+  const [size] = useState(22);
   return (
     <Flex direction="column">
       <SideMenuItemButton
-        icon={<FaHome size={25} />}
+        icon={<FaHome size={size} />}
         active={true}
         title="Home"
       />
-      <SideMenuItemButton icon={<IoMdFlame size={25} />} title="Trending" />
+      <SideMenuItemButton icon={<IoMdFlame size={size} />} title="Trending" />
       <SideMenuItemButton
-        icon={<MdSubscriptions size={25} />}
+        icon={<MdSubscriptions size={size} />}
         title="Subscriptions"
       />
 
       <SideMenuItem>
         <SideMenuItemButton
-          icon={<MdVideoLibrary size={25} />}
+          icon={<MdVideoLibrary size={size} />}
           title="Library"
         />
-        <SideMenuItemButton icon={<MdHistory size={25} />} title="History" />
+        <SideMenuItemButton icon={<MdHistory size={size} />} title="History" />
       </SideMenuItem>
 
       <SideMenuItem>
@@ -57,25 +58,25 @@ export const SideMenuContent: React.FC<SideMenuContentProps> = ({}) => {
       <SideMenuItem>
         <SideMenuItemHeading title="BEST OF YOUTUBE" />
         <SideMenuItemButton
-          icon={<IoMusicalNotesSharp size={25} />}
+          icon={<IoMusicalNotesSharp size={size} />}
           title="Music"
         />
-        <SideMenuItemButton icon={<FaTrophy size={25} />} title="Sports" />
+        <SideMenuItemButton icon={<FaTrophy size={size} />} title="Sports" />
         <SideMenuItemButton
-          icon={<SiYoutubegaming size={25} />}
+          icon={<SiYoutubegaming size={size} />}
           title="Gaming"
         />
-        <SideMenuItemButton icon={<BiNews size={25} />} title="News" />
-        <SideMenuItemButton icon={<CgLivePhoto size={25} />} title="Live" />
+        <SideMenuItemButton icon={<BiNews size={size} />} title="News" />
+        <SideMenuItemButton icon={<CgLivePhoto size={size} />} title="Live" />
         <SideMenuItemButton
-          icon={<BsCameraVideoFill size={25} />}
+          icon={<BsCameraVideoFill size={size} />}
           title="360* video"
         />
       </SideMenuItem>
 
       <SideMenuItem>
         <SideMenuItemButton
-          icon={<IoAddCircle size={25} />}
+          icon={<IoAddCircle size={size} />}
           title="Browse channels"
         />
       </SideMenuItem>
@@ -83,27 +84,30 @@ export const SideMenuContent: React.FC<SideMenuContentProps> = ({}) => {
       <SideMenuItem>
         <SideMenuItemHeading title="MORE FROM YOUTUBE" />
         <SideMenuItemButton
-          icon={<AiFillYoutube size={25} />}
+          icon={<AiFillYoutube size={size} />}
           title="YouTube Premium"
         />
-        <SideMenuItemButton icon={<CgLivePhoto size={25} />} title="Live" />
+        <SideMenuItemButton icon={<CgLivePhoto size={size} />} title="Live" />
       </SideMenuItem>
 
       <SideMenuItem>
-        <SideMenuItemButton icon={<MdSettings size={25} />} title="Settings" />
         <SideMenuItemButton
-          icon={<FaFlag size={25} />}
+          icon={<MdSettings size={size} />}
+          title="Settings"
+        />
+        <SideMenuItemButton
+          icon={<FaFlag size={size} />}
           title="Report history"
         />
-        <SideMenuItemButton icon={<BiHelpCircle size={25} />} title="Help" />
+        <SideMenuItemButton icon={<BiHelpCircle size={size} />} title="Help" />
         <SideMenuItemButton
-          icon={<MdFeedback size={25} />}
+          icon={<MdFeedback size={size} />}
           title="Send feedback"
         />
       </SideMenuItem>
 
       <SideMenuItem>
-        <Box boxSizing="border-box" margin="1em">
+        <Box boxSizing="border-box" my="1em" mx="1.5em">
           <Box marginBottom={2}>
             <Text fontSize="sm">
               About Press Copyright Contact us Creators Advertise Developers

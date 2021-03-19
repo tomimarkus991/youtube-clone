@@ -3,7 +3,7 @@ import {
   IconButton,
   Input,
   InputGroup,
-  InputRightElement,
+  InputRightAddon,
   Tooltip,
 } from "@chakra-ui/react";
 import React from "react";
@@ -16,38 +16,34 @@ export const Search: React.FC<SearchProps> = ({}) => {
   return (
     <>
       <Box
-        className="search"
-        flexDirection="row"
-        display={{ base: "none", md: "flex" }}
-        w={["0em", "0em", "15em", "28em", "30em"]}
-        // w={{ md: "10em" }}
+        display={{ base: "none", md: "block" }}
+        w={{ base: "0em", sm: "5em", md: "15em", lg: "30em", xl: "30em" }}
       >
         <InputGroup>
-          <Input type="text" placeholder="Search" w="lg" />
+          <Input type="text" placeholder="Search" borderRadius="0" />
           <Tooltip label="Search" aria-label="Search">
-            <InputRightElement
-              children={
-                <IconButton
-                  icon={<AiOutlineSearch />}
-                  aria-label="search"
-                  variant="ghost"
-                />
-              }
+            <InputRightAddon
+              children={<AiOutlineSearch />}
+              cursor="pointer"
+              w="4em"
+              justifyContent="center"
             />
           </Tooltip>
         </InputGroup>
       </Box>
-      <Tooltip
-        label="Search with your voice"
-        aria-label="Search with your voice"
-      >
-        <IconButton
-          marginLeft="1em"
-          icon={<BiMicrophone />}
-          aria-label="search"
-          variant="ghost"
-        />
-      </Tooltip>
+      <Box display={{ base: "none", md: "block" }}>
+        <Tooltip
+          label="Search with your voice"
+          aria-label="Search with your voice"
+        >
+          <IconButton
+            marginLeft="1em"
+            icon={<BiMicrophone />}
+            aria-label="search"
+            variant="ghost"
+          />
+        </Tooltip>
+      </Box>
     </>
   );
 };

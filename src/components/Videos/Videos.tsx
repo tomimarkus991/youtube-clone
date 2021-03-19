@@ -7,8 +7,10 @@ import { Video } from "./Video";
 interface VideosProps {}
 
 export const Videos: React.FC<VideosProps> = ({}) => {
-  const [data, setData] = useState<any>([]);
+  const [mainData, setData] = useState<any>([]);
   const [nextPageToken, setNextPageToken] = useState();
+  const [hasMore, setHasMore] = useState(true);
+
   const up = async () => {
     let response = await getVideos();
 
@@ -16,18 +18,25 @@ export const Videos: React.FC<VideosProps> = ({}) => {
     setNextPageToken(response.nextPageToken);
   };
   const next = async () => {
-    if (data) {
-      let data = await getNextVideos(nextPageToken);
+    let data = await getNextVideos(nextPageToken);
 
-      setData((oldState: any) => [...oldState, ...data.items]);
-      setNextPageToken(data.nextPageToken);
-    }
+    setData((oldState: any) => [...oldState, ...data.items]);
+    setNextPageToken(data.nextPageToken);
   };
   useEffect(() => {
     up();
   }, []);
+  // useEffect(() => {
+  //   console.log("data", data);
+  // }, [data]);
+  useEffect(() => {
+    if (nextPageToken === "") {
+      setHasMore(false);
+    }
+  }, [nextPageToken]);
   return (
     <Flex
+      className="scrollbar"
       boxSizing="border-box"
       marginY="1em"
       marginX={{ base: "1em", xl: "1.5em", xsl: "1em", xxl: "4.5em" }}
@@ -35,9 +44,9 @@ export const Videos: React.FC<VideosProps> = ({}) => {
       justifyContent="center"
     >
       <InfiniteScroll
-        dataLength={data.length}
+        dataLength={mainData.length}
         next={next}
-        hasMore={true}
+        hasMore={hasMore}
         loader={<div></div>}
         endMessage={<div></div>}
         scrollThreshold={0.9}
@@ -57,7 +66,7 @@ export const Videos: React.FC<VideosProps> = ({}) => {
           }}
           gap={4}
         >
-          {data.map((video: any) => (
+          {mainData.map((video: any) => (
             <Video video={video} id={video.id} />
           ))}
         </Grid>

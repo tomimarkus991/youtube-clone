@@ -13,9 +13,9 @@ export const SideMenu: React.FC<SideMenuProps> = ({ isMinimized }) => {
     <>
       <Box
         display={{ base: "none", xl: "block" }}
-        className="sidebar"
-        w={isMinimized ? "xxs" : "xxs2"}
-        minW={isMinimized ? "xxs" : "xxs2"}
+        className="sidebar scrollbar"
+        w={isMinimized ? "xxs" : "2sm"}
+        minW={isMinimized ? "xxs" : "2sm"}
         maxH="94vh"
         top="3.5em"
         zIndex={1}

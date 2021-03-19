@@ -1,25 +1,50 @@
+import axios from "axios";
 export const getVideos = async () => {
-  let response = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?key=${process.env.NEXT_PUBLIC_API_KEY}&chart=mostPopular&maxResults=20&part=snippet,status,contentDetails,statistics`
+  let response = await axios.get(
+    "https://www.googleapis.com/youtube/v3/videos",
+    {
+      params: {
+        key: process.env.NEXT_PUBLIC_API_KEY,
+        part: "snippet,status,contentDetails,statistics",
+        chart: "mostPopular",
+        maxResults: 20,
+      },
+    }
   );
-  let data = await response.json();
+  let data = await response.data;
+
   return data;
 };
 
 export const getNextVideos = async (next: any) => {
-  console.log("token", next);
-
-  let response = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?key=${process.env.NEXT_PUBLIC_API_KEY}&chart=mostPopular&maxResults=20&part=snippet,status,contentDetails,statistics&pageToken=${next}`
+  let response = await axios.get(
+    "https://www.googleapis.com/youtube/v3/videos",
+    {
+      params: {
+        key: process.env.NEXT_PUBLIC_API_KEY,
+        part: "snippet,status,contentDetails,statistics",
+        chart: "mostPopular",
+        maxResults: 20,
+        pageToken: next,
+      },
+    }
   );
-  let data = await response.json();
+
+  let data = await response.data;
   return data;
 };
 
 export const getUserProfile = async (id: string) => {
-  let response = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?key=${process.env.NEXT_PUBLIC_API_KEY}&part=snippet&id=${id}`
+  let response = await axios.get(
+    "https://www.googleapis.com/youtube/v3/channels",
+    {
+      params: {
+        key: process.env.NEXT_PUBLIC_API_KEY,
+        part: "snippet",
+        id,
+      },
+    }
   );
-  let data = await response.json();
+  let data = await response.data;
   return data;
 };

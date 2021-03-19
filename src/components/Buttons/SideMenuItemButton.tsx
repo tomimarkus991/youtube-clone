@@ -22,6 +22,9 @@ export const SideMenuItemButton: React.FC<SideMenuItemButtonProps> = ({
       leftIcon={icon}
       isActive={active}
       color={color}
+      iconSpacing="1.5em"
+      pl="1.5em"
+      fontSize="md"
     >
       {title}
     </Button>

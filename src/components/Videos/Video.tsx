@@ -1,7 +1,6 @@
-import { Avatar } from "@chakra-ui/avatar";
 import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Image as ChakraImage } from "@chakra-ui/image";
 import { Badge, Box, Flex, HStack, Text } from "@chakra-ui/layout";
+import { Avatar, Image as ChakraImage } from "@chakra-ui/react";
 import moment from "moment";
 import numeral from "numeral";
 import React, { useEffect, useState } from "react";
@@ -55,7 +54,7 @@ export const Video: React.FC<VideoProps> = ({ video, id }) => {
         {user ? (
           <Avatar src={user.items[0].snippet.thumbnails.default.url} />
         ) : (
-          <Avatar src="https://bit.ly/broken-link" />
+          <Avatar bg="gray.500" />
         )}
 
         <Box ml="3">

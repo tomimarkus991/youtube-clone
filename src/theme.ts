@@ -7,8 +7,9 @@ const customTheme = extendTheme({
     initialColorMode: "dark",
   },
   sizes: {
-    xxs: "7em",
-    xxs2: "14.5em",
+    xxs: "4.5em",
+    "2sm": "14.5em",
+    xxl: "7em",
   },
   colors: {
     brand: {
@@ -19,12 +20,6 @@ const customTheme = extendTheme({
       700: "#181818",
       800: "#202020",
     },
-  },
-  components: {
-    Flex: {},
-    // Button:{
-    //   base
-    // }
   },
   breakpoints: {
     base: "0em",
