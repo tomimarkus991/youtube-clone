@@ -9,7 +9,7 @@ export const SideMenuItemHeading: React.FC<SideMenuItemHeadingProps> = ({
   title,
 }) => {
   return (
-    <Text color="gray.400" fontWeight="semibold" marginLeft="1em">
+    <Text color="gray.400" fontWeight="semibold" marginLeft="1em" mt="0.3em">
       {title}
     </Text>
   );

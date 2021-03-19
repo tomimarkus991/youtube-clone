@@ -28,7 +28,7 @@ export const NavbarLeftSide: React.FC<NavbarLeftSideProps> = ({
         ml={{ base: "0.3em", sm: "1em" }}
         mr={{ base: "0.2em", sm: "0" }}
         as={YTIcon}
-        w="6em"
+        w={{ base: "5em", sm: "6em" }}
         h="2em"
         cursor="pointer"
       />

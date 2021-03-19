@@ -37,22 +37,15 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
         />
       </Tooltip>
       <MenuList>
-        <MenuItem>
-          <Button
-            leftIcon={colorMode === "light" ? <FaMoon /> : <FaSun />}
-            onClick={toggleColorMode}
-            aria-label="Switch color-mode"
-            variant="ghost"
-            w="100%"
-          />
+        <MenuItem
+          onClick={toggleColorMode}
+          icon={
+            colorMode === "light" ? <FaMoon size="2em" /> : <FaSun size="2em" />
+          }
+          justifyItems="center"
+        >
+          {colorMode === "light" ? "Dark Mode" : "Light Mode"}
         </MenuItem>
-
-        <MenuItem h="1px" py="0"></MenuItem>
-        <MenuItem>
-          <MdSettings size={25} />
-          <Text marginLeft={3}>Settings</Text>
-        </MenuItem>
-
         <MenuItem as={Menu} autoSelect={false}>
           <MenuButton
             as={Button}
@@ -73,6 +66,10 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
               <MenuItemOption value="portugese">Portugese</MenuItemOption>
             </MenuOptionGroup>
           </MenuList>
+        </MenuItem>
+        <MenuItem>
+          <MdSettings size={25} />
+          <Text marginLeft={3}>Settings</Text>
         </MenuItem>
 
         <MenuItem>
