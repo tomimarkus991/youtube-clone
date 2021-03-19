@@ -47,6 +47,7 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
           />
         </MenuItem>
 
+        <MenuItem h="1px" py="0"></MenuItem>
         <MenuItem>
           <MdSettings size={25} />
           <Text marginLeft={3}>Settings</Text>
@@ -59,7 +60,7 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
             rightIcon={<CgChevronDown size={18} />}
             variant="ghost"
           >
-            <Text>Language: English</Text>
+            <Text fontWeight="400">Language: English</Text>
           </MenuButton>
           <MenuList>
             <MenuOptionGroup
@@ -97,7 +98,7 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
             rightIcon={<CgChevronDown size={18} />}
             variant="ghost"
           >
-            <Text>Location: Estonia</Text>
+            <Text fontWeight="400">Location: Estonia</Text>
           </MenuButton>
           <MenuList>
             <MenuOptionGroup
