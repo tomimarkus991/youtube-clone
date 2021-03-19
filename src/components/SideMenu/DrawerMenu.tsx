@@ -8,7 +8,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Icon,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { BsList } from "react-icons/bs";
@@ -19,7 +18,6 @@ interface DrawerMenuProps {}
 
 export const DrawerMenu: React.FC<DrawerMenuProps> = ({}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const iconColor = useColorModeValue("#2D3748", "white");
   return (
     <>
       <IconButton
