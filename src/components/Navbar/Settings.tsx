@@ -59,7 +59,7 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
             rightIcon={<CgChevronDown size={18} />}
             variant="ghost"
           >
-            Language: English
+            <Text>Language: English</Text>
           </MenuButton>
           <MenuList>
             <MenuOptionGroup
@@ -97,7 +97,7 @@ export const Settings: React.FC<SettingsProps> = ({}) => {
             rightIcon={<CgChevronDown size={18} />}
             variant="ghost"
           >
-            Location: Estonia
+            <Text>Location: Estonia</Text>
           </MenuButton>
           <MenuList>
             <MenuOptionGroup
