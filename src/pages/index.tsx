@@ -1,5 +1,6 @@
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Flex } from "@chakra-ui/layout";
+import Head from "next/head";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { SideMenu } from "../components/SideMenu/SideMenu";
@@ -16,6 +17,10 @@ const Index: React.FC<IndexProps> = ({}) => {
 
   return (
     <>
+      <Head>
+        <title>YouTube</title>
+        <link rel="icon" href="/yt.ico" />
+      </Head>
       <Navbar isMinimized={isMinimized} setIsMinimized={setIsMinimized} />
       <Flex flexDirection="row" position="sticky" bg={bg}>
         <SideMenu isMinimized={isMinimized} />
