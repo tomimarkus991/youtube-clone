@@ -10,6 +10,9 @@ interface IndexProps {}
 const Index: React.FC<IndexProps> = ({}) => {
   const [isMinimized, setIsMinimized] = useState(false);
   const bg = useColorModeValue("#F9F9F9", "#181818");
+  if (typeof window !== "undefined") {
+    window.onbeforeunload = () => window.scrollTo(0, 0);
+  }
 
   return (
     <>

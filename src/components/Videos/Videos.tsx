@@ -1,7 +1,7 @@
 import { Flex, Grid } from "@chakra-ui/layout";
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { getNextVideos, getVideos } from "../../utils/getData";
+import { getVideos } from "../../utils/getData";
 import { Video } from "./Video";
 
 interface VideosProps {}
@@ -12,23 +12,16 @@ export const Videos: React.FC<VideosProps> = ({}) => {
   const [hasMore, setHasMore] = useState(true);
 
   const up = async () => {
-    let response = await getVideos();
-
-    setData(response.items);
-    setNextPageToken(response.nextPageToken);
-  };
-  const next = async () => {
-    let data = await getNextVideos(nextPageToken);
+    let data = await getVideos(nextPageToken);
 
     setData((oldState: any) => [...oldState, ...data.items]);
     setNextPageToken(data.nextPageToken);
   };
+
   useEffect(() => {
     up();
   }, []);
-  // useEffect(() => {
-  //   console.log("data", data);
-  // }, [data]);
+
   useEffect(() => {
     if (nextPageToken === "") {
       setHasMore(false);
@@ -45,7 +38,7 @@ export const Videos: React.FC<VideosProps> = ({}) => {
     >
       <InfiniteScroll
         dataLength={mainData.length}
-        next={next}
+        next={up}
         hasMore={hasMore}
         loader={<div></div>}
         endMessage={<div></div>}
